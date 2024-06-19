@@ -64,7 +64,7 @@ module.exports.loginUser = async serviceData => {
       { expiresIn: '1d' }
     )
 
-    return { token }
+    return { token, firstName: user.firstName, lastName: user.lastName } // Retourner également le prénom de l'utilisateur
   } catch (error) {
     console.error('Error in userService.js', error)
     throw new Error(error)
